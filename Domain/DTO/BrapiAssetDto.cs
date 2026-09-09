@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Desafio_Inoa.DTO
+namespace Desafio_Inoa.Domain.DTO
 {
     public class BrapiAssetDto
     {

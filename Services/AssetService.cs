@@ -1,4 +1,4 @@
-﻿using Desafio_Inoa.DTO;
+﻿using Desafio_Inoa.Domain.DTO;
 using Desafio_Inoa.Services.Interfaces;
 using System;
 using System.Collections.Generic;
