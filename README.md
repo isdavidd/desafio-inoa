@@ -50,6 +50,6 @@ Nesse trecho do código, o valor "args[número]" é referente aos argumentos na 
 O while true serve para que a aplicação não pare de rodar, a não ser que seja encerrada manualmente. O await Task.Delay foi uma sugestão do próprio copilot, integrado à IDE do Visual Studio, ele serve para substituir o Thread.Sleep, que eu inicialmente utilizaria.
 
 #### Observações sobre o uso de IA
-Utilizei a IA pontualmente para tirar dúvidas, como na utilização do Task.Delay ao invés de Thread.Sleep. Fiz um esboço básico de como pensei na solução do problema do desafio.
+Utilizei a IA pontualmente para tirar dúvidas, como na utilização do Task.Delay ao invés de Thread.Sleep. Fiz um esboço básico de como pensei na solução do problema do desafio, utilizei alguns padrões/boas práticas como a utilização de Singleton na classe de configuração e utilização de Interfaces para melhor controle de responsabilidade das classes de serviço.
 
 ![Esboço da solução](image-3.png)
