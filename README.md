@@ -42,3 +42,14 @@ Utilizei a documentação da própria Microsoft para criação do serviço de ob
 Coloquei aqui a lógica principal do desafio, como validação de inputs e tempo de monitoração. Criei algumas validações em cima dos inputs, para verificar valores de preços de compra e venda visando barrar valores negativos ou preço de compra maior que preço de venda (coloquei essa validação porque pra mim não faz sentido um preço de compra ser maior que preço de venda). Adicionalmente adicionei uma validação em cima do código do ativo, tendo em vista que o usuário pode digitar só letras minúsculas, só maiúsculas ou ambas, então coloquei uma validação que torna agnóstico esse ponto, aí o código só se importa com o nome correto do ticker do ativo.
 
 Coloquei outra validação para impedir que o usuário digite um código que não esteja na lista (ITUB4, VALE3, MGLU3 ou PETR4), tendo em vista que a versão gratuita do Brapi não permite a consulta de outros tickers além desses.
+
+![Observação 1](image-1.png)
+Nesse trecho do código, o valor "args[número]" é referente aos argumentos na hora de executar o programa. Ex: dotnet run **VALE3 20.6 19.5** o args[0] é o ticker, args[1] é o preço de venda e args[2] é o preço de compra. E o CultureInfo serve para padronizar o separador das casas decimais, pois em alguns países, como o Brasil o separador é vírgula, enquanto em outros é um ponto. No caso caso o separador foi definido como ponto.
+
+![Observação 2](image-2.png)
+O while true serve para que a aplicação não pare de rodar, a não ser que seja encerrada manualmente. O await Task.Delay foi uma sugestão do próprio copilot, integrado à IDE do Visual Studio, ele serve para substituir o Thread.Sleep, que eu inicialmente utilizaria.
+
+#### Observações sobre o uso de IA
+Utilizei a IA pontualmente para tirar dúvidas, como na utilização do Task.Delay ao invés de Thread.Sleep. Fiz um esboço básico de como pensei na solução do problema do desafio.
+
+![Esboço da solução](image-3.png)

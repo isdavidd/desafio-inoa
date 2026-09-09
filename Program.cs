@@ -58,7 +58,7 @@ while (true)
 
     Console.WriteLine("\n-------------------------------------------------------------------------------");
 
-    await Task.Delay(TimeSpan.FromSeconds(30));
+    await Task.Delay(TimeSpan.FromSeconds(120));
 
 }
     
