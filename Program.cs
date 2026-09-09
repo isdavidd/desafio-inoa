@@ -1,9 +1,8 @@
 ﻿using Desafio_Inoa.Configs;
+using Desafio_Inoa.Services;
 
-Console.WriteLine("Hello, World!");
+string email1 = Configuration.GetInstance().EmailList[0];
 
-var config = Configuration.GetInstance();
+EmailService emailService = new EmailService();
 
-Console.WriteLine(config.Host);
-
-
+await emailService.SendEmails("Teste", "Teste");

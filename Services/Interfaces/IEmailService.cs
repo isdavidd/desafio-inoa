@@ -6,6 +6,6 @@ namespace Desafio_Inoa.Services.Interfaces
 {
     public interface IEmailService 
     {
-        Task SendEmail(string email, string subject, string content);
+        Task SendEmails(string subject, string content);
     }
 }
