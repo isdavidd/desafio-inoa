@@ -43,13 +43,13 @@ while (true)
     Console.WriteLine("\nPreço atual do ativo: " + assetPrice[0].Data.RegularMarketPrice);
     Console.WriteLine("\nAtivo: " + assetPrice[0].Data.LongName);
     
-    if (assetPrice[0].Data.RegularMarketPrice >= sellPrice)
+    if (assetPrice[0].Data.RegularMarketPrice > sellPrice)
     {
         Console.WriteLine("\nO preço do ativo atingiu o preço teto!");
 
         await emailService.SendEmails($"VENDA DE {assetPrice[0].Symbol}", $"Olá! O ativo {assetPrice[0].Data.LongName} atingiu o preço teto de venda {sellPrice}!");
     }
-    else if (assetPrice[0].Data.RegularMarketPrice <= buyPrice)
+    else if (assetPrice[0].Data.RegularMarketPrice < buyPrice)
     {
         Console.WriteLine("\nO preço do ativo atingiu o valor de compra definido!");
 
