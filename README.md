@@ -12,7 +12,8 @@ Até o momento da minha análise, dividi a aplicação em 3 partes principais: E
 Serviço de envio de e-mail, a ideia é que ele envie os e-mails para a lista de destinatários e nada além disso. O conteúdo da mensagem e o título vão ficar no código principal. Até o momento estou organizando dessa forma.
 
 - **Cotação:**
-Ainda não comecei, mas a ideia é colocar a lógica de compra/venda aqui, além da chamada pra api que vai fornecer os valores do ativo
+A ideia desse serviço é encapsular a lógica de obtenção de dados dos ativos escolhidos, trazendo o valor da cotação.
+
 
 - **Código Principal:**
 Lógico principal da aplicação vai ficar aqui, no momento estou utilizando como um playground para testar as funcionalidades
@@ -25,3 +26,14 @@ Um dos requisitos do projeto é que tenha um arquivo de configuração para arma
  
 - **Serviço de E-mail** 
 Me baseei em dois vídeos tutoriais sobre envio de e-mail em C#: [Link 1](https://www.youtube.com/watch?v=tCGHKXfMlss) e [Link 2](https://www.youtube.com/watch?v=lCHKwyekbT4)
+
+- **Serviço de Consulta de Cotação**
+Pesquisei APIs que fornecem valor de cotações e achei uma chamada ["Brapi"](https://brapi.dev/), que fornece chamadas gratuitas para 4 ativos (PETR4, MGLU3, VALE3 e ITUB4). Analisei o retorno do endpoint https://brapi.dev/api/v2/stocks/quote?symbols=CÓDIGO_DO_ATIVO e criei um DTO (Data Transfer Object) para lidar com o retorno da API e utilizar os dados, me baseando na [documentação da API](https://brapi.dev/docs)
+
+O DTO criado se chama BrapiAssetDto e nele está mapeado 3 campos: preço do ativo, nome do ticker e nome completo da empresa. Apesar do endpoint retornar muitos campos, só utilizei 3 para âmbito de simplificação.
+
+Utilizei a documentação da própria Microsoft para criação do serviço de obtenção de preço https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient e o ChatGPT para organizar e explicar onde o objeto HttpClient deveria ser chamado.
+
+##### Retorno do endpoint utilizado:
+
+![Retorno do endpoint em questão](image.png)
