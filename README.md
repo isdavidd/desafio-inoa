@@ -16,7 +16,7 @@ A ideia desse serviço é encapsular a lógica de obtenção de dados dos ativos
 
 
 - **Código Principal:**
-Lógico principal da aplicação vai ficar aqui, no momento estou utilizando como um playground para testar as funcionalidades
+Aqui fica a lógica principal da aplicação do desafio, contendo validação dos inputs e lógica de monitoração dos preços dos ativos.
 
 ### Decisões: 
 Essa seção tem como objetivo trazer mais clareza sobre o uso de IA nesse desafio, mostrando onde e como foi utilizada.
@@ -37,3 +37,8 @@ Utilizei a documentação da própria Microsoft para criação do serviço de ob
 ##### Retorno do endpoint utilizado:
 
 ![Retorno do endpoint em questão](image.png)
+
+- **Código Principal**
+Coloquei aqui a lógica principal do desafio, como validação de inputs e tempo de monitoração. Criei algumas validações em cima dos inputs, para verificar valores de preços de compra e venda visando barrar valores negativos ou preço de compra maior que preço de venda (coloquei essa validação porque pra mim não faz sentido um preço de compra ser maior que preço de venda). Adicionalmente adicionei uma validação em cima do código do ativo, tendo em vista que o usuário pode digitar só letras minúsculas, só maiúsculas ou ambas, então coloquei uma validação que torna agnóstico esse ponto, aí o código só se importa com o nome correto do ticker do ativo.
+
+Coloquei outra validação para impedir que o usuário digite um código que não esteja na lista (ITUB4, VALE3, MGLU3 ou PETR4), tendo em vista que a versão gratuita do Brapi não permite a consulta de outros tickers além desses.

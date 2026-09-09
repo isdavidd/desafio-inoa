@@ -22,7 +22,7 @@ decimal buyPrice = decimal.Parse(args[2], CultureInfo.InvariantCulture);
 
 if (!Enum.GetNames<AssetTickers>().Any(ticker => string.Equals(ticker, assetTicker, StringComparison.OrdinalIgnoreCase)))
 {
-    Console.WriteLine("\nTicker inválido!. Por favor, digite um dos seguintes símbolos: ITUB4, VALE3, MGLU3 ou PETR4.");
+    Console.WriteLine("\nTicker inválido!. Os ativos válidos são: ITUB4, VALE3, MGLU3 ou PETR4.");
     return;
 }
 
